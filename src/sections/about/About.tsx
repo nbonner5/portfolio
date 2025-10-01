@@ -38,7 +38,7 @@ const About: React.FC = () => {
         <p className="about-description">
           I'm a software engineer specializing in web development with React, .NET, and SQL.
           I have experience building APIs, ensuring accessibility compliance,
-          and collaborating in Agile team. I enjoy solving real-world problems through
+          and collaborating in Agile teams. I enjoy solving real-world problems through
           clean, scalable code and am always exploring new technologies to grow as a developer.
         </p>
         <div className="about-tags">
