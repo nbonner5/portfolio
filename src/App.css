@@ -4,6 +4,8 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  background: #101820;
 }
 
 #root {
@@ -14,48 +16,4 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 4rem;
-}
-
-.hero {
-  text-align: center;
-  padding: 4rem 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: linear-gradient(135deg, #38ef7d 0%, #11998e 60%, #007cf0 100%);
-}
-
-.hero-heading {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  width: auto;
-  margin-left: 0;
-  margin-right: 0;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.hero-description {
-  font-size: 1.5rem;
-  margin-bottom: 2.5rem;
-  color: #e0ffe0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.hero-buttons button {
-  min-width: 180px;
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
 }
