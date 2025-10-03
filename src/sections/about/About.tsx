@@ -12,11 +12,11 @@ const About: React.FC = () => {
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
-        setFocused(entry.isIntersecting && entry.intersectionRatio > 0.7);
+        setFocused(entry.isIntersecting && entry.intersectionRatio > 0.8);
       });
     };
     const observer = new window.IntersectionObserver(handleIntersection, {
-      threshold: [0.7]
+      threshold: [0.8]
     });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);

@@ -6,15 +6,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: linear-gradient(135deg, #38ef7d 0%, #11998e 60%, #007cf0 100%);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  background: var(--bg-hero);
+  box-shadow: var(--card-shadow);
 }
 
 .hero-heading {
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-main);
   width: auto;
   margin-left: 0;
   margin-right: 0;
@@ -24,7 +24,7 @@
 .hero-description {
   font-size: 1.5rem;
   margin-bottom: 2.5rem;
-  color: #e0ffe0;
+  color: var(--text-secondary);
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 

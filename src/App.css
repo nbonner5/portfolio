@@ -1,3 +1,18 @@
+html.dark {
+  --bg-main: #101820;
+  --bg-hero: linear-gradient(135deg, #38ef7d 0%, #11998e 60%, #007cf0 100%);
+  --text-main: #fff;
+  --text-secondary: #e0ffe0;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.12);
+}
+html.light {
+  --bg-main: #f7fafc;
+  --bg-hero: linear-gradient(135deg, #e0ffe0 0%, #b2f7ef 60%, #7fd8f7 100%);
+  --text-main: #222;
+  --text-secondary: #11998e;
+  --card-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
 html, body {
   box-sizing: border-box;
   width: 100vw;
@@ -5,7 +20,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Arial', sans-serif;
-  background: #101820;
+  background: var(--bg-main);
 }
 
 #root {
@@ -16,4 +31,22 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  padding-top: 4rem;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  z-index: 100;
+  background: var(--bg-hero);
+  color: var(--text-main);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
