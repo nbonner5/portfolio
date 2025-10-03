@@ -1,0 +1,120 @@
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-content-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.contact-left {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-heading);
+}
+
+.contact-social {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.contact-social-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.contact-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-right {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  font-size: 1rem;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 1rem;
+  outline: none;
+  width: 100%;;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+
+@media (max-width: 800px) {
+  .contact-content-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .contact-left, .contact-right {
+    flex: unset;
+    width: 100%;
+  }
+}

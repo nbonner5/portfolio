@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import About from './sections/about/About'
 import Hero from './sections/hero/Hero'
 import Projects from './sections/projects/Projects'
+import Contact from './sections/contact/contact'
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
@@ -23,6 +24,7 @@ function App() {
       <Hero />
       <About />
       <Projects />
+      <Contact />
     </>
   )
 }

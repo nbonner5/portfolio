@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './Hero.css';
 
 const Button = React.lazy(() => import("nexus/Button"));
@@ -19,25 +19,34 @@ class ButtonErrorBoundary extends React.Component<{children: React.ReactNode}, {
   }
 }
 
-const Hero: React.FC = () => (
-  <div className="hero">
-    <h1 className="hero-heading">Nickolas R Bonner</h1>
-    <p className="hero-description">
-      Software Engineer | Web Developer
-    </p>
-    <div className="hero-buttons">
-      <ButtonErrorBoundary>
-        <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
-          <Button variant="primary">Contact Me</Button>
-        </React.Suspense>
-      </ButtonErrorBoundary>
-      <ButtonErrorBoundary>
-        <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
-          <Button variant="secondary">View Projects</Button>
-        </React.Suspense>
-      </ButtonErrorBoundary>
+const Hero: React.FC = () => {
+  const handleViewProjects = useCallback(() => {
+    const projectsSection = document.querySelector('.projects-section');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, []);
+
+  return (
+    <div className="hero">
+      <h1 className="hero-heading">Nickolas R Bonner</h1>
+      <p className="hero-description">
+        Software Engineer | Web Developer
+      </p>
+      <div className="hero-buttons">
+        <ButtonErrorBoundary>
+          <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
+            <Button variant="primary">Contact Me</Button>
+          </React.Suspense>
+        </ButtonErrorBoundary>
+        <ButtonErrorBoundary>
+          <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
+            <Button variant="secondary" onClick={handleViewProjects}>View Projects</Button>
+          </React.Suspense>
+        </ButtonErrorBoundary>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Hero;
