@@ -22,10 +22,17 @@ class ButtonErrorBoundary extends React.Component<{children: React.ReactNode}, {
 const Hero: React.FC = () => {
   const handleViewProjects = useCallback(() => {
     const projectsSection = document.querySelector('.projects-section');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+        if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
   }, []);
+
+  const handleContactMe = useCallback(() => {
+    const contactSection = document.querySelector('.contact-section');
+        if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, []);
 
   return (
     <div className="hero">
@@ -36,7 +43,7 @@ const Hero: React.FC = () => {
       <div className="hero-buttons">
         <ButtonErrorBoundary>
           <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
-            <Button variant="primary">Contact Me</Button>
+            <Button variant="primary" onClick={handleContactMe}>Contact Me</Button>
           </React.Suspense>
         </ButtonErrorBoundary>
         <ButtonErrorBoundary>

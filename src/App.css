@@ -1,8 +1,10 @@
 html.dark {
   --bg-main: #101820;
   --bg-hero: linear-gradient(135deg, #38ef7d 0%, #11998e 60%, #007cf0 100%);
+  --bg-secondary: #1e293b;
   --text-main: #fff;
   --text-secondary: #e0ffe0;
+  --text-tertiary: #0ea5e9;
   --card-shadow: 0 2px 16px rgba(0,0,0,0.12);
 }
 html.light {
@@ -10,6 +12,7 @@ html.light {
   --bg-hero: linear-gradient(135deg, #e0ffe0 0%, #b2f7ef 60%, #7fd8f7 100%);
   --text-main: #222;
   --text-secondary: #11998e;
+  --text-tertiary: #0ea5e9;
   --card-shadow: 0 2px 16px rgba(0,0,0,0.08);
 }
 

@@ -4,6 +4,7 @@ import About from './sections/about/About'
 import Hero from './sections/hero/Hero'
 import Projects from './sections/projects/Projects'
 import Contact from './sections/contact/contact'
+import Footer from './sections/footer/Footer'
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
@@ -25,6 +26,7 @@ function App() {
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </>
   )
 }
