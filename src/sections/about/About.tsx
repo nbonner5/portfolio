@@ -27,11 +27,17 @@ const About: React.FC = () => {
   return (
     <div ref={sectionRef} className={`about-section${focused ? ' focused' : ''}`}>
       <div className="about-profile">
-        <img
-          src="/images/profile.jpg"
-          alt="Profile"
-          className="about-profile-pic"
-        />
+        <picture>
+          <source srcSet="/images/profile.webp" type="image/webp" />
+          <img
+            src="/images/profile.jpg"
+            srcSet="/images/profile.jpg 1x, /images/profile.webp 2x"
+            alt="Profile"
+            className="about-profile-pic"
+            width={320}
+            height={320}
+          />
+        </picture>
       </div>
       <div className="about-content">
         <h2 className="about-heading">About</h2>
