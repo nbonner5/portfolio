@@ -34,7 +34,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 4rem;
 }
 
 .theme-toggle {
@@ -52,4 +51,9 @@ html, body {
   box-shadow: var(--card-shadow);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--bg-secondary);
+  color: var(--text-main);
 }

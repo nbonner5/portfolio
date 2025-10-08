@@ -3,6 +3,22 @@ import React, { Suspense, useRef, useEffect, useState } from 'react';
 import { Linkedin, GitHub, Mail } from 'react-feather';
 const Button = React.lazy(() => import('nexus/Button'));
 
+class ButtonErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) {
+      return <button type="submit" style={{ alignSelf: 'flex-end' }}>Send Message</button>;
+    }
+    return this.props.children;
+  }
+}
+
 const GITHUB_URL = 'https://github.com/nbonner5';
 const LINKEDIN_URL = 'https://linkedin.com/in/nickolas-bonner';
 const EMAIL_ADDRESS = 'nbonner5@outlook.com';
@@ -63,11 +79,13 @@ export default function Contact() {
                             Message
                             <textarea name="message" required rows={5} />
                         </label>
-                        <Suspense fallback={<button type="submit" style={{ alignSelf: 'flex-end' }}>Send Message</button>}>
-                            <Button type="submit" variant="primary" style={{ alignSelf: 'flex-end' }}>
-                                Send Message
-                            </Button>
-                        </Suspense>
+                        <ButtonErrorBoundary>
+                            <Suspense fallback={<button type="submit" style={{ alignSelf: 'flex-end' }}>Send Message</button>}>
+                                <Button type="submit" variant="primary" style={{ alignSelf: 'flex-end' }}>
+                                    Send Message
+                                </Button>
+                            </Suspense>
+                        </ButtonErrorBoundary>
                     </form>
                 </div>
             </div>
