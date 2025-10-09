@@ -46,22 +46,16 @@ const projects = [
 		image: 'images/bonnerelectric.png',
 	},
 	{
-		title: 'Task Management App',
-		description: 'A full-stack task management application with real-time updates and team collaboration.',
-		link: 'https://github.com/nbonner5/taskmanager',
-		image: 'images/taskmanager.png',
+		title: 'VR Crime Scene Investigation Training App',
+		description: 'Pedagogical training app for crime scene investigation using VR.',
+		link: 'https://github.com/nbonner5/FSC_CSI',
+		image: '',
 	},
 	{
-		title: 'Weather Dashboard',
-		description: 'A responsive weather dashboard with location-based forecasts and interactive maps.',
-		link: 'https://github.com/nbonner5/weather-dashboard',
-		image: 'images/weather.png',
-	},
-	{
-		title: 'E-commerce Platform',
-		description: 'A modern e-commerce platform with payment integration and inventory management.',
-		link: 'https://github.com/nbonner5/ecommerce',
-		image: 'images/ecommerce.png',
+		title: 'Autonomous RC Car Project',
+		description: 'Using a Raspberry Pi and a camera, built an autonomous RC car that can navigate a track and avoid obstacles.',
+		link: 'https://github.com/nbonner5/',
+		image: '',
 	},
 ];
 
