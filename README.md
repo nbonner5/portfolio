@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# Nickolas R Bonner - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my work as a Software Engineer and Web Developer. Built with cutting-edge technologies and featuring a unique federated component architecture.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### **Modern Tech Stack**
+- **React 18** with TypeScript for type-safe development
+- **Vite** for lightning-fast development and optimized builds
+- **Module Federation** for dynamic component loading
+- **CSS Custom Properties** for seamless light/dark theme switching
 
-## React Compiler
+### **Responsive Design**
+- Fully responsive layout that works on all devices
+- Mobile-first approach with progressive enhancement
+- Smooth animations and transitions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### **Interactive Components**
+- **Hero Section** with smooth scrolling navigation
+- **About Section** with personal introduction
+- **Projects Carousel** featuring 6+ projects with navigation controls
+- **Contact Form** with social media links
+- **Theme Toggle** for light/dark mode switching
 
-## Expanding the ESLint configuration
+### **Advanced Architecture**
+- **Federated UI Components** loaded from external component library
+- **Error Boundaries** for graceful fallbacks when components fail to load
+- **Lazy Loading** for optimal performance
+- **Accessibility-First** design with ARIA labels and keyboard navigation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Projects Showcased
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Portfolio Website** - This very site built with React, Vite, and module federation
+2. **Remote UI Library** - A federated component library for sharing UI across apps
+3. **Small Business Website Rebuild** - Modern redesign for Bonner Electric
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technical Highlights
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### **Module Federation Setup**
+- Dynamic loading of UI components from external library
+- Graceful degradation when remote components are unavailable
+- Shared dependencies (React, React-DOM) for optimal bundle size
+
+### **Performance Optimizations**
+- Code splitting and lazy loading
+- Optimized images and assets
+- Efficient re-rendering with proper React patterns
+- Responsive image loading
+
+### **Developer Experience**
+- TypeScript for type safety
+- ESLint configuration for code quality
+- Hot module replacement for fast development
+- Component-based architecture for maintainability
+
+## 🎨 Design Philosophy
+
+The portfolio emphasizes:
+- **Clean, modern aesthetics** with subtle animations
+- **Accessibility** as a core requirement
+- **Performance** without compromising user experience
+- **Responsive design** that works everywhere
+- **Progressive enhancement** for maximum compatibility
+
+## 📱 Responsive Breakpoints
+
+- **Desktop** (>1100px): Full 3-column layout
+- **Tablet** (700-1100px): 2-column layout with adjusted spacing
+- **Mobile** (<700px): Single column with optimized touch targets
+
+## 🌙 Theme System
+
+- **CSS Custom Properties** for consistent theming
+- **System preference detection** with manual override
+- **Smooth transitions** between themes
+- **Accessible color contrasts** in both modes
+
+## 🔧 Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🤝 Contact
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Email**: nbonner5@outlook.com
+- **LinkedIn**: [linkedin.com/in/nickolas-bonner](https://linkedin.com/in/nickolas-bonner)
+- **GitHub**: [github.com/nbonner5](https://github.com/nbonner5)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
