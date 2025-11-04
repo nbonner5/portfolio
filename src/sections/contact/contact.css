@@ -134,6 +134,12 @@
     transition: color 0.2s;
 }
 
+.contact-social-icon:hover {
+  color: var(--text-secondary);
+  transform: scale(1.15) rotate(-8deg);
+  transition: color 0.2s, transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+
 @media (max-width: 800px) {
   .contact-section {
     width: 100%;

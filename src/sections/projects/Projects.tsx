@@ -54,10 +54,22 @@ const projects = [
 	{
 		title: 'Autonomous RC Car Project',
 		description: 'Using a Raspberry Pi and a camera, built an autonomous RC car that can navigate a track and avoid obstacles.',
-		link: 'https://github.com/nbonner5/',
 		image: 'images/gremlin.png',
+		showModal: true,
 	},
 ];
+
+const RC_CAR_IFRAME = (
+  <iframe
+    src="https://docs.google.com/presentation/d/e/2PACX-1vQ1F6SBnRl_7CAa03eXXxqfQNr-Ei7nNw2P7dd0t8-g096AjBc4JMOqS3YyD8JPgu2cbfwqOXO-snaO/pubembed?start=true&loop=true&delayms=3000"
+    frameBorder="0"
+    width="960"
+    height="569"
+    allowFullScreen
+    title="Autonomous RC Car Presentation"
+    style={{ maxWidth: '100%', borderRadius: '1rem', boxShadow: '0 2px 16px rgba(0,0,0,0.12)' }}
+  />
+);
 
 const Projects: React.FC = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,6 +77,7 @@ const Projects: React.FC = () => {
 	const [theme, setTheme] = useState<'light' | 'dark'>(
 		document.documentElement.className as 'light' | 'dark'
 	);
+	const [modalOpen, setModalOpen] = useState(false);
 
 	useEffect(() => {
 		const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -89,6 +102,14 @@ const Projects: React.FC = () => {
 		return () => observer.disconnect();
 	}, []);
 
+	function handleShowModal() {
+		setModalOpen(true);
+	}
+
+	function handleCloseModal() {
+		setModalOpen(false);
+	}
+
 	return (
 		<div
 			ref={sectionRef}
@@ -104,15 +125,44 @@ const Projects: React.FC = () => {
 									<Card
 										title={project.title}
 										description={project.description}
-										link={project.link}
 										image={project.image}
 										theme={theme}
+										{...(project.showModal ? {
+											onAction: handleShowModal
+										} : { link: project.link })}
 									/>
 								</React.Suspense>
 							</CardErrorBoundary>
 						</div>
 					))}
 				</div>
+				{modalOpen && (
+					<div
+						style={{
+							position: 'fixed',
+							top: 0,
+							left: 0,
+							width: '100vw',
+							height: '100vh',
+							background: 'rgba(0,0,0,0.7)',
+							zIndex: 9999,
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'center',
+						}}
+					>
+						<div style={{ position: 'relative', background: 'var(--bg-main)', borderRadius: '1rem', padding: '2rem', boxShadow: 'var(--card-shadow)' }}>
+							<button
+								onClick={handleCloseModal}
+								style={{ position: 'absolute', top: 16, right: 16, fontSize: 24, background: 'none', border: 'none', color: 'var(--text-main)', cursor: 'pointer' }}
+								aria-label="Close"
+							>
+								&times;
+							</button>
+							{RC_CAR_IFRAME}
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
