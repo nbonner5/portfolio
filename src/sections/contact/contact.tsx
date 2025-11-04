@@ -69,11 +69,11 @@ export default function Contact() {
                     >
                         <label>
                             Name
-                            <input type="text" name="name" required />
+                            <input type="text" name="name" autoComplete="name" required />
                         </label>
                         <label>
                             Email
-                            <input type="email" name="email" required />
+                            <input type="email" name="email" autoComplete="email" required />
                         </label>
                         <label>
                             Message

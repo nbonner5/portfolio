@@ -8,7 +8,7 @@ html.dark {
   --card-shadow: 0 2px 16px rgba(0,0,0,0.12);
 }
 html.light {
-  --bg-main: #f7fafc;
+  --bg-main: #f6fbfd;
   --bg-hero: linear-gradient(135deg, #e0ffe0 0%, #b2f7ef 60%, #7fd8f7 100%);
   --text-main: #222;
   --text-secondary: #11998e;

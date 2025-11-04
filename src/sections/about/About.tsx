@@ -30,8 +30,7 @@ const About: React.FC = () => {
         <picture>
           <source srcSet="/images/profile.webp" type="image/webp" />
           <img
-            src="/images/profile.jpg"
-            srcSet="/images/profile.jpg 1x, /images/profile.webp 2x"
+            src="/images/profile.webp"
             alt="Profile"
             className="about-profile-pic"
             width={320}

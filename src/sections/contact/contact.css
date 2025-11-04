@@ -140,7 +140,7 @@
     min-width: 0;
     padding: 1.5rem 0.5rem;
     box-sizing: border-box;
-    max-width: 100%;
+    max-width: 90%;
   }
   .contact-content-row {
     flex-direction: column;

@@ -49,51 +49,22 @@ const projects = [
 		title: 'VR Crime Scene Investigation Training App',
 		description: 'Pedagogical training app for crime scene investigation using VR.',
 		link: 'https://github.com/nbonner5/FSC_CSI',
-		image: '',
+		image: 'images/fsc_csi.png',
 	},
 	{
 		title: 'Autonomous RC Car Project',
 		description: 'Using a Raspberry Pi and a camera, built an autonomous RC car that can navigate a track and avoid obstacles.',
 		link: 'https://github.com/nbonner5/',
-		image: '',
+		image: 'images/gremlin.png',
 	},
 ];
 
 const Projects: React.FC = () => {
 	const sectionRef = useRef<HTMLDivElement>(null);
-	const carouselRef = useRef<HTMLDivElement>(null);
 	const [focused, setFocused] = useState(false);
-	const [currentIndex, setCurrentIndex] = useState(0);
 	const [theme, setTheme] = useState<'light' | 'dark'>(
 		document.documentElement.className as 'light' | 'dark'
 	);
-
-	const [cardsPerView, setCardsPerView] = useState(3); // Number of cards visible at once
-	const maxIndex = Math.max(0, projects.length - cardsPerView);
-
-	// Handle responsive card count
-	useEffect(() => {
-		const updateCardsPerView = () => {
-			if (window.innerWidth <= 480) {
-				setCardsPerView(1);
-			} else if (window.innerWidth <= 700) {
-				setCardsPerView(1);
-			} else if (window.innerWidth <= 1100) {
-				setCardsPerView(2);
-			} else {
-				setCardsPerView(3);
-			}
-		};
-
-		updateCardsPerView();
-		window.addEventListener('resize', updateCardsPerView);
-		return () => window.removeEventListener('resize', updateCardsPerView);
-	}, []);
-
-	// Reset current index when cards per view changes
-	useEffect(() => {
-		setCurrentIndex(0);
-	}, [cardsPerView]);
 
 	useEffect(() => {
 		const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -118,14 +89,6 @@ const Projects: React.FC = () => {
 		return () => observer.disconnect();
 	}, []);
 
-	const goToPrevious = () => {
-		setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
-	};
-
-	const goToNext = () => {
-		setCurrentIndex((prevIndex) => Math.min(maxIndex, prevIndex + 1));
-	};
-
 	return (
 		<div
 			ref={sectionRef}
@@ -133,48 +96,22 @@ const Projects: React.FC = () => {
 		>
 			<div className="projects-content">
 				<h2 className="projects-heading">Projects</h2>
-				<div className="carousel-container">
-					<button 
-						className="carousel-btn carousel-btn-prev"
-						onClick={goToPrevious}
-						disabled={currentIndex === 0}
-						aria-label="Previous projects"
-					>
-						&#8249;
-					</button>
-					<div className="carousel-wrapper" ref={carouselRef}>
-						<div 
-							className="projects-list"
-							style={{
-								transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)`,
-								transition: 'transform 0.3s ease-in-out'
-							}}
-						>
-							{projects.map((project) => (
-								<div key={project.title} className="carousel-item">
-									<CardErrorBoundary>
-										<React.Suspense fallback={<div className="card-fallback">Loading...</div>}>
-											<Card
-												title={project.title}
-												description={project.description}
-												link={project.link}
-												image={project.image}
-												theme={theme}
-											/>
-										</React.Suspense>
-									</CardErrorBoundary>
-								</div>
-							))}
+				<div className="projects-list">
+					{projects.map((project) => (
+						<div key={project.title} className="carousel-item">
+							<CardErrorBoundary>
+								<React.Suspense fallback={<div className="card-fallback">Loading...</div>}>
+									<Card
+										title={project.title}
+										description={project.description}
+										link={project.link}
+										image={project.image}
+										theme={theme}
+									/>
+								</React.Suspense>
+							</CardErrorBoundary>
 						</div>
-					</div>
-					<button 
-						className="carousel-btn carousel-btn-next"
-						onClick={goToNext}
-						disabled={currentIndex === maxIndex}
-						aria-label="Next projects"
-					>
-						&#8250;
-					</button>
+					))}
 				</div>
 			</div>
 		</div>
