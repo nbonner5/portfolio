@@ -26,16 +26,18 @@
   margin-bottom: 2.5rem;
   color: var(--text-secondary);
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  width: 90%;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  width: 90%;
 }
 
 .hero-buttons button {
-  min-width: 180px;
+  min-width: 150px;
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
   border-radius: 0.5rem;

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import './About.css';
 
 const techSkills = [
-  'React', '.NET', 'Python'
+  'React', 'JavaScript', '.NET', 'SQL'
 ];
 
 const About: React.FC = () => {
