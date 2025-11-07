@@ -74,7 +74,7 @@ function App() {
       >
         {theme === 'dark' ? '🌞 Light Mode' : '🌙 Dark Mode'}
       </button>
-      <Hero />
+      <Hero theme={theme} />
       <About />
       <Projects />
       <Contact />

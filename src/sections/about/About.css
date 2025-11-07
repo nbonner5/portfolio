@@ -26,7 +26,7 @@
   height: 240px;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid #38ef7d;
+  border: 6px solid #0f766e;
   box-shadow: 0 2px 16px rgba(0,0,0,0.12);
 }
 
@@ -60,7 +60,7 @@
 }
 
 .about-tag {
-  background: #11998e;
+  background: #0f766e;
   color: #fff;
   padding: 0.5rem 1.2rem;
   border-radius: 1rem;

@@ -19,7 +19,11 @@ class ButtonErrorBoundary extends React.Component<{children: React.ReactNode}, {
   }
 }
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  theme: 'light' | 'dark';
+}
+
+const Hero: React.FC<HeroProps> = ({ theme='dark' }) => {
   const handleViewProjects = useCallback(() => {
     const projectsSection = document.querySelector('.projects-section');
         if (projectsSection) {
@@ -43,12 +47,12 @@ const Hero: React.FC = () => {
       <div className="hero-buttons">
         <ButtonErrorBoundary>
           <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
-            <Button variant="primary" onClick={handleContactMe}>Contact Me</Button>
+            <Button variant="primary" onClick={handleContactMe} theme={theme}>Contact Me</Button>
           </React.Suspense>
         </ButtonErrorBoundary>
         <ButtonErrorBoundary>
           <React.Suspense fallback={<button disabled style={{opacity: 0.6}}>Loading...</button>}>
-            <Button variant="secondary" onClick={handleViewProjects}>View Projects</Button>
+            <Button variant="secondary" onClick={handleViewProjects} theme={theme}>View Projects</Button>
           </React.Suspense>
         </ButtonErrorBoundary>
       </div>
